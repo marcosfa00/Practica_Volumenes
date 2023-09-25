@@ -28,6 +28,24 @@ Con el comando **docker ps**
 
 
 
+Mapea el puerto 80 del contenedor con el puerto 8000 de tu máquina.
+---
+Utiliza bind mount para que el directorio del apache2 'htdocs' este montado un directorio que tu elijas.
+---        
+        Utiliza -v "$PWD"/htdocs:/usr/local/apache2/htdocs/
+
+
+Bien cómo ya teniamos creado el contenedor, ahora no podemos redirigir los puertos, esto se debió hacer anterior mente, por lo que debemos parar el contenedor y finalmente borrarlo, para poder volverlo a crear con estos nuevos parámetros:
+
+**Borramos**
+
+        docker stop dam_httpd
+        docker rm dam_httpd
+
+**Lo creamos de Nuevo**
+Para esto debemos crear anteriormente la carpeta **htdocs** para montar nuestra web sobre el contenedor, de esta manera podremos ejecutar un unico comando
+
+     docker run -dit --name dam_httpd -p 8080:80 -v /Users/marcosfa/Documents/Dam2/SXE/boletin2/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
 
 
 
