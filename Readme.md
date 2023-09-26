@@ -47,6 +47,13 @@ Para esto debemos crear anteriormente la carpeta **htdocs** para montar nuestra 
 
      docker run -dit --name dam_httpd -p 8080:80 -v /Users/marcosfa/Documents/Dam2/SXE/boletin2/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
 
+**Nuevo Contenedor**
+Ahora procederemos a crear un nuevo Contenedor con otros puertos, pero con el mismo volumen
+
+**Utilizaremso los puertos 80:9080**
+
+    docker run -dit --name dam_web2 -p 9080:80 -v /Users/marcosfa/Documents/Dam2/SXE/boletin2/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
+
 
 
 
