@@ -54,6 +54,9 @@ Ahora procederemos a crear un nuevo Contenedor con otros puertos, pero con el mi
 
     docker run -dit --name dam_web2 -p 9080:80 -v /Users/marcosfa/Documents/Dam2/SXE/boletin2/htdocs:/usr/local/apache2/htdocs/ httpd:2.4
 
+**Comprobamos haciendo localhosta a ambos puertos y vemso que funciona**,
+haciendo modificaciones en la pagina tambien vemos que se actualiza en ambos contenedores
+
 
 
 
